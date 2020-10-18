@@ -1,0 +1,161 @@
+body, html {
+	margin: 0;
+	height: 100%;
+}
+
+
+.div-banner{
+  background-image: url('../imgs/banner-bg.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.div-100{
+  height: 100%;
+}
+
+.h1{
+  font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+.div-header{
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+}
+
+.right-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.right-nav ul li{
+  float: right;
+}
+
+.right-nav ul li a{
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.right-nav ul li a:hover{
+  background-color: #4CAF50;
+}
+
+.nav-bg.scrolled {
+  background-color: #fff !important;
+  transition: background-color 200ms linear;
+}
+
+
+.div-left-menu{
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  position: fixed;
+  height: 100%;
+  width: 20%;
+  background: #32373d;
+}
+
+.div-left-menu a{
+  color: white;
+}
+
+.div-left-menu-header{
+  margin: 0;
+  height: 30%;
+  width: 100%;
+  background: #000;
+  background-image: url('../imgs/bg_1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.div-left-menu-body{
+  margin: 0;
+  width: 100%;
+  height: 70%;
+}
+
+.div-left-menu-body ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.div-left-menu-body ul li{
+  display: list-item;
+}
+
+.div-left-menu-body ul li a{
+  padding: 15px 30px;
+  display: block;
+  color: gray;
+}
+
+.div-left-menu-body ul li a:hover{
+  padding: 15px 30px;
+  display: block;
+  background-color: #007bff;
+  color: white;
+}
+
+.div-right-content{
+  list-style-type: none;
+  width: 80%;
+  margin-left: 20%;
+  height: auto;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: DodgerBlue;
+  color: white;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+.btn {
+  margin: 1%;
+  background-color: DodgerBlue; 
+  border: none; 
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px; 
+  cursor: pointer; 
+}
+
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.div-table{
+  margin-left: 30%;
+}
+
+tr:hover {background-color: #f5f5f5;}

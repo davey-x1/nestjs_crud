@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+    <link rel = "stylesheet" href = "/css/divs.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!--- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --->
+    <script>
+      function update(id, user, pass) {
+          $.ajax({
+              url: "/users/update",
+              type: "POST",
+              data: 'user_id='+id+'&user='+user+'&password='+pass,
+              success: function(data){
+
+              }
+          });
+      }
+
+      function deleteUser(id, row){
+        if(confirm('Are you sure you want to remove this data?'))
+        {
+          $.ajax({
+              url: "/users/remove",
+              type: "POST",
+              data: 'user_id='+id,
+              success: function(data){
+                $(row).closest("tr").remove();
+                alert('Data removed')
+              }
+          });
+        } else {
+          alert('No data has been removed')
+        }
+        
+      }
+
+      var openOrClose = 0;
+
+      function openNav(){
+        if(openOrClose == 0){
+          document.getElementById("div-left-menu").style.width = "0%";
+          document.getElementById("div-left-menu").style.display = "none";
+          document.getElementById("div-right-content").style.width = "100%";
+          document.getElementById("div-right-content").style.marginLeft = "0%";
+          openOrClose = 1;
+        } else {
+          document.getElementById("div-left-menu").style.width = "20%";
+          document.getElementById("div-left-menu").style.display = "block";
+          document.getElementById("div-right-content").style.width = "80%";
+          document.getElementById("div-right-content").style.marginLeft = "20%";
+          openOrClose = 0;
+        }
+        
+      }
+    </script>
+    <!--- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --->
+    <div class = "div-left-menu" id = "div-left-menu">
+      <div class = "div-left-menu-header">
+        <div class = "div-left-menu-header-info">
+          Welcome back!
+        </div>
+      </div>
+      <div class = "div-left-menu-body">
+        <ul>
+          <li><a href = ""> <i class="fa fa-home"></i> Menu principal </a></li>
+          <li><a href = ""> <i class="fa fa-home"></i> Menu principal </a></li>
+          <li><a href = ""> <i class="fa fa-home"></i> Menu principal </a></li>
+          <li><a href = "/"> <i class="fa fa-home"></i> Cerrar Sesion </a></li>
+        </ul>
+      </div>
+    </div>
+    <div class = "div-right-content" id = "div-right-content">
+      <button onclick = "openNav();" class = "btn" ><i class="fa fa-bars"></i></button>
+      <div class = "div-table">
+      
+        <table>
+          <tr>
+            <th> # </th>
+            <th> User </th>
+            <th> Password </th>
+            <th> -- </th>
+          </tr>
+          {{#each message}}
+          <tr>
+            <td> </td> 
+            <td onblur = "update('{{ user_id }}' , this.innerText, '{{ password }}')" contenteditable = "true">{{ user }} </td>
+            <td onblur = "update('{{ user_id }}' , '{{ user }}', this.innerText)" contenteditable = "true">{{ password }} </td>
+            <td><i onclick = "deleteUser('{{ user_id }}', this)" class="fa fa-close" style = "color: red; cursor: pointer;"></i></td>
+          </tr>
+          {{/each}}
+        </table>
+      </div>
+    </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </body>
+</html>

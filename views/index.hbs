@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title> Index </title>
+    
+    <link rel = "stylesheet" href = "/css/divs.css">
+    <link rel = "stylesheet" href = "/css/index.css">
+    <!-- <link rel = "stylesheets" href = "/css/forms.css"> -->
+    
+  </head>
+  <body>
+    <header class = "div-header">
+      <nav class = "right-nav">
+        <ul class = "nav-bg">
+          <li><a href = "#login"> Login </a></li>
+          <li><a href = "#index"> Index </a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class = "div-banner" id = "index">
+    </div>
+
+    <div class = "div-100" id = "login">
+      <div class = "div-form-bg">
+        <div class = "div-form-login">
+          <form action = "users/login" class = "auto-hide-form" autocomplete = "off" method = "post">
+            <h1> Sign in </h1>
+            <p> Welcome back! <p>
+            <input type = "text" id = "i-user" name = "user" placeholder = "Enter your username">
+            <br>
+            <input type = "text" id = "i-pass" name = "password" placeholder = "Enter your password">
+            <p></p>
+            <input type = "submit" value = "Login">
+          </form>
+        </div>
+        <div class = "div-form-register">
+          <form action = "users/create" class = "auto-hide-form" autocomplete = "off" method = "post">
+            <h1> Sign up </h1>
+            <p> New here? Sign up! <p>
+            <input type = "text" id = "i-user" name = "user" placeholder = "Enter your username">
+            <br>
+            <input type = "text" id = "i-pass" name = "password" placeholder = "Enter your password">
+            <p></p>
+            <input type = "submit" value = "Sign up">
+          </form>
+        </div>
+        
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src = "/js/scroll.js">
+    </script>
+  </body>
+</html>

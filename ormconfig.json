@@ -1,0 +1,12 @@
+{
+    "type": "postgres",
+    "name": "work_pg",
+    "host": "ruby.db.elephantsql.com",
+    "port": 5432,
+    "username": "osfrohkj",
+    "password": "ug-uMIFUCI-82acQmqJwIFaGePOdlLmG",
+    "database": "osfrohkj",
+    "autoLoadEntities": true,
+    "synchronize": true,
+    "logging": true
+}
